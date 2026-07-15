@@ -26,6 +26,11 @@
 }
 }
 
+.profile:hover{
+    transform:scale(1.03);
+}
+}
+
 .hero h2{
     font-size:32px;
     color:#d4af37;
