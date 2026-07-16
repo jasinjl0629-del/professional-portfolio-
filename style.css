@@ -741,15 +741,18 @@ body {
 .contact-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+    gap:50px;
+    max-width:900px;
+    margin:0 auto;
 }
 
 .contact-card{
     background:#181818;
     border:1px solid rgba(212,175,55,.3);
     border-radius:20px;
-    padding:35px 25px;
+    padding:45px 35px;
     transition:.4s ease;
+    margin-bottom:20px;
 }
 
 .contact-card:hover{
@@ -760,7 +763,7 @@ body {
 
 .contact-card h3{
     color:#d4af37;
-    margin-bottom:15px;
+    margin-bottom:20px;
     font-size:22px;
 }
 
