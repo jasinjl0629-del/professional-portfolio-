@@ -227,11 +227,12 @@ body {
 }
 
 .profile {
-    width: 470px;
+    /* Reduced size and border for a smaller profile box */
+    width: 360px;
     height: auto;
-    border-radius: 25px;
-    border: 5px solid var(--primary-gold);
-    box-shadow: 0 25px 60px var(--shadow-dark);
+    border-radius: 20px;
+    border: 3px solid var(--primary-gold);
+    box-shadow: 0 20px 50px var(--shadow-dark);
     transition: transform var(--transition-slow);
     will-change: transform;
     object-fit: cover;
@@ -453,7 +454,7 @@ body {
     }
 
     .profile {
-        width: 320px;
+        width: 300px;
     }
 
     .about {
@@ -496,7 +497,7 @@ body {
     }
 
     .profile {
-        width: 250px;
+        width: 220px;
     }
 
     .nav-links {
@@ -559,7 +560,7 @@ body {
 
     .profile {
         width: 100%;
-        max-width: 250px;
+        max-width: 220px;
     }
 
     .logo {
