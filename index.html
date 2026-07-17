@@ -17,8 +17,9 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<a href="#home" class="top-btn">↑</a>
 <body>
+    <a href="#home" class="top-btn" aria-label="Back to top">↑</a>
+
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">J.L. Jasin</div>
@@ -30,7 +31,7 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="menu-toggle">&#9776;</div>
+        <div class="menu-toggle" aria-label="Toggle menu">&#9776;</div>
     </nav>
 
     <!-- HERO SECTION -->
@@ -74,7 +75,10 @@
                 </div>
             </div>
 
-            <img src="profile.png" alt="J.L. Jasin - HR Executive" class="profile">
+            <!-- Wrap the image inside a container so CSS .profile img works -->
+            <div class="profile">
+                <img src="profile.png" alt="J.L. Jasin - HR Executive">
+            </div>
         </div>
     </header>
 
@@ -180,6 +184,8 @@
             </div>
         </div>
     </section>
+
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="projects">
 
     <div class="section-title">
@@ -222,7 +228,10 @@
         </div>
 
     </div>
-<section id="contact" class="contact">
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
 
     <div class="section-title">
         <span>GET IN TOUCH</span>
@@ -238,12 +247,12 @@
 
         <div class="contact-card">
             <h3>📱 WhatsApp</h3>
-            <a href="https://wa.me/918925361312" target="_blank">Chat on WhatsApp</a>
+            <a href="https://wa.me/918925361312" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
         </div>
 
         <div class="contact-card">
             <h3>💼 LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/jasinhr" target="_blank">
+            <a href="https://www.linkedin.com/in/jasinhr" target="_blank" rel="noopener noreferrer">
                 View LinkedIn Profile
             </a>
         </div>
@@ -255,73 +264,75 @@
 
     </div>
 
-</section>
-</section>
-<footer class="footer">
-    <p>© 2026 J.L. Jasin. All Rights Reserved.</p>
-    <p>Designed & Developed by J.L. Jasin</p>
-</footer>
-    <script>
+    </section>
 
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
+    <footer class="footer">
+        <p>© 2026 J.L. Jasin. All Rights Reserved.</p>
+        <p>Designed & Developed by J.L. Jasin</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        });
     });
-});
 
-const hiddenElements = document.querySelectorAll("section");
+    const hiddenElements = document.querySelectorAll("section");
 
-hiddenElements.forEach((el)=>{
-    el.classList.add("hidden");
-    observer.observe(el);
-});
+    hiddenElements.forEach((el)=>{
+        el.classList.add("hidden");
+        observer.observe(el);
+    });
+    </script>
 
-</script>
     <script>
+    const menuToggle=document.querySelector(".menu-toggle");
+    const navLinks=document.querySelector(".nav-links");
 
-const menuToggle=document.querySelector(".menu-toggle");
-const navLinks=document.querySelector(".nav-links");
+    menuToggle.addEventListener("click",()=>{
+        navLinks.classList.toggle("active");
+    });
+    </script>
 
-menuToggle.addEventListener("click",()=>{
-    navLinks.classList.toggle("active");
-});
-
-</script>
+    <script>
     const text = [
-    "HR Executive",
-    "MBA (HR)",
-    "Talent Acquisition",
-    "HR Operations"
-];
+        "HR Executive",
+        "MBA (HR)",
+        "Talent Acquisition",
+        "HR Operations"
+    ];
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
 
-(function type() {
+    (function type() {
 
-    if (count === text.length) {
-        count = 0;
-    }
+        if (count === text.length) {
+            count = 0;
+        }
 
-    currentText = text[count];
-    letter = currentText.slice(0, ++index);
+        currentText = text[count];
+        letter = currentText.slice(0, ++index);
 
-    document.getElementById("typing").textContent = letter;
+        document.getElementById("typing").textContent = letter;
 
-    if (letter.length === currentText.length) {
-        setTimeout(() => {
-            index = 0;
-            count++;
-            type();
-        }, 1500);
-    } else {
-        setTimeout(type, 100);
-    }
+        if (letter.length === currentText.length) {
+            setTimeout(() => {
+                index = 0;
+                count++;
+                type();
+            }, 1500);
+        } else {
+            setTimeout(type, 100);
+        }
 
-})();
+    })();
+    </script>
 </body>
 </html>
